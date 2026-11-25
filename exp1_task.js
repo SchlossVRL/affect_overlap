@@ -41,7 +41,7 @@
 if (!window.STIM_SETTINGS) {
   document.body.innerHTML = "<p style='font:16px sans-serif;margin:40px'>Could not load " +
     "<b>stimuli/exp1_conditions.js</b>. Run 1_stimuli/run_all.py, and check that the " +
-    "<b>stimuli</b> folder is inside the same folder as exp1_task.html.</p>";
+    "<b>stimuli</b> folder is inside the same folder as index.html.</p>";
   throw new Error("stimuli/exp1_conditions.js not found");
 }
 
@@ -56,8 +56,8 @@ const ISHIHARA_DIR = "ishihara/";        // ishihara-0.png ... ishihara-10.png (
 const BLANK_MS = 500;                    // blank screen between trials
 const MIN_W = 2 * IMG_W + GAP + 80;      // smallest window width that fits a trial
 const MIN_H = IMG_W + 210;               // smallest window height that fits a trial
-const EXPERIMENT_VERSION = "exp1_test";  // change whenever the exp version changes (e.g., test, v1, v2 etc.)
-const DATAPIPE_ID = "Q3vlK7BNsr6w";      // DataPipe experiment ID (empty = don't save)
+const EXPERIMENT_VERSION = "exp1_v1";    // change whenever the exp version changes (e.g., test, v1, v2 etc.)
+const DATAPIPE_ID = "Et4qeI8jkt51";      // DataPipe experiment ID (empty = don't save)
 
 const KEYS_TEXT = "Press the left arrow for the left chart, or the right arrow for the right chart.";
 
