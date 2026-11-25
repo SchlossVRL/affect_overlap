@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<!--
+  exp1_task.html -- this is the page participants open. It only LOADS things; 
+  the experiment itself is in exp1_task.js.
+
+  Load order matters:
+    1. jsPsych and the plugins it uses (from the unpkg CDN, exact versions)
+    2. jsPsych's stylesheet, then ours (exp1_styles.css), so ours can override it
+    3. stimuli/exp1_conditions.js -- written by 1_stimuli/make_stimuli.py; defines
+       STIM_SETTINGS (display settings) and STIM_TRIALS (the 80 unique trials)
+    4. exp1_task.js -- uses everything above, so it comes last
+
+  Plugins (one per kind of screen):
+    html-keyboard-response : trials, blank screens
+    html-button-response   : welcome, instructions, intros, breaks
+    browser-check          : device and window-size checks
+    fullscreen             : enter/exit fullscreen
+    preload                : load all images before they are needed
+    survey-multi-select    : consent ("I consent" box)
+    survey-text            : demographics
+    survey-html-form       : Ishihara plates (type the number)
+    survey-multi-choice    : color vision questions
+
+  Extension:
+    extension-pipe: saves the data to Zenodo through DataPipe (set up in exp1_task.js)
+-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Schloss Lab Experiment</title>
+  <script src="https://unpkg.com/jspsych@8.3.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@2.2.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-button-response@2.1.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-browser-check@2.1.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-fullscreen@2.1.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-preload@2.1.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-survey-multi-select@2.1.1"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-survey-text@2.1.1"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@2.1.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@2.2.1"></script>
+  <script src="https://unpkg.com/@jspsych/extension-pipe@0.2.0"></script>
+  <link href="https://unpkg.com/jspsych@8.3.0/css/jspsych.css" rel="stylesheet">
+  <link href="exp1_styles.css" rel="stylesheet">
+  <script src="stimuli/exp1_conditions.js"></script>
+</head>
+<body>
+  <script src="exp1_task.js"></script>
+</body>
+</html>
